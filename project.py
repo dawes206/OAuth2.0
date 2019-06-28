@@ -11,7 +11,14 @@ import random, string
 
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
+import httplib2
+import json
+from flask import make_response
+import requests
 
+CLIENT_ID = json.loads(
+open('client_secrest.json', 'r').read())['web']['client_id']
+)
 
 #Connect to Database and create database session
 engine = create_engine('sqlite:///restaurantmenu.db')
