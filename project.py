@@ -43,7 +43,7 @@ def restaurantsJSON():
 def showLogin():
     state = ''.join(list(random.choice(string.ascii_uppercase + string.digits) for x in range(32)))
     login_session['state'] = state
-    return "The current session state is %s" %login_session['state']
+    return render_template('login.html')
 
 #Show all restaurants
 @app.route('/')
